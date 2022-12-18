@@ -21,7 +21,7 @@ jobs:
     steps: 
     - uses: actions/checkout@v2
       with:
-        token: ${{ secrets.my }}
+        token: ${{ secrets.test }}
         submodules: 'true'
         ssh-key: ${{  secrets.action  }}
         repository: UsersHeli/ituse
