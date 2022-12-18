@@ -36,6 +36,19 @@ jobs:
       run:  |
          echo `pwd`/ituse
          cd ituse && sh workflow.sh `pwd`
+    - name: cp
+      run: |
+         cp ./ituse/Clash.yaml ./url1.yaml
+         git config --local user.email "actions@github.com"
+         git config --local user.name "GitHub Actions"
+         git pull origin main
+         git add ./url1.yaml
+         git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
+        
+    - name: Push
+      uses:  ad-m/github-push-action@master
+      with:
+        branch: main
 
 
 
