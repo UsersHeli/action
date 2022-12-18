@@ -25,11 +25,11 @@ jobs:
         submodules: 'true'
         ssh-key: ${{  secrets.action  }}
         repository: UsersHeli/ituse
-        path: action
+        path: ituse
     - name: print
-      run: echo `ls action`
+      run: echo `ls ituse`
     - name: get workdir
-      run: echo `pwd`/action
+      run: echo `pwd`/ituse
 
   # # This workflow contains a single job called "build"
   # build:
