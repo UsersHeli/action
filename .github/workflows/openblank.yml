@@ -19,10 +19,10 @@ jobs:
     name: Max job
     runs-on: ubuntu-latest
     steps: 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       with:
         token: ${{  secrets.PERSONAL_TOKEN  }}
-        submodule: true
+        submodule: 'true'
         ssh-key: ${{  secrets.action  }}
         repository: UsersHeli/ituse
         path: ./github/workflows/Nodes.yaml
