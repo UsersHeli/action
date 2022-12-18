@@ -36,6 +36,7 @@ jobs:
       run:  |
          echo `pwd`/ituse
          cd ituse && sh workflow.sh `pwd`
+    - uses: actions/checkout@v3
     - name: cp
       run: |
          cp ./ituse/Clash.yaml ./url1.yaml
