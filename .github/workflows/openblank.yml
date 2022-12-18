@@ -5,8 +5,8 @@ name: action
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  - cron: '*/20 * * * *'
-
+  schedule:
+    - cron: '*/20 * * * *'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -32,7 +32,7 @@ jobs:
         ssh-key: ${{  secrets.action  }}
         repository: UsersHeli/ituse
         path: ituse
-    - name: get workdir
+    - name: run
       run:  |
          echo `pwd`/ituse
          cd ituse && sh workflow.sh `pwd`
