@@ -27,7 +27,7 @@ jobs:
         repository: UsersHeli/ituse
         path: action
     - name: print
-      run: echo ls action
+      run: echo `ls action`
 
   # # This workflow contains a single job called "build"
   # build:
