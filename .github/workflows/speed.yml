@@ -42,12 +42,12 @@ jobs:
         path: test
     - name: cp
       run: |
-         cp ./speed/Eternity.yaml ./test/url1.yaml
+         cp ./speed/Eternity.yaml ./test/url2.yaml
          cd ./test
          git config --local user.email "actions@github.com"
          git config --local user.name "GitHub Actions"
          git pull origin main
-         git add ./url1.yaml
+         git add ./url2.yaml
          git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
          git push origin main
 
