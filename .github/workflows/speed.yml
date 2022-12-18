@@ -5,7 +5,10 @@ name: action
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  - cron: '*/20 * * * *'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -15,10 +18,7 @@ jobs:
   my-job:
     name: Max job
     runs-on: ubuntu-latest
-    steps: 
-    - uses: actions/setup-node@v3   #Node.js环境
-      with:
-        node-version: '16.x'    
+    steps:  
     - uses: actions/setup-python@v4 #python环境
       with:
         python-version: '3.x'       #python 3.x
@@ -30,12 +30,12 @@ jobs:
         token: ${{ secrets.test }}
         submodules: 'true'
         ssh-key: ${{  secrets.action  }}
-        repository: UsersHeli/ituse
-        path: ituse
+        repository: UsersHeli/speed
+        path: speed
     - name: get workdir
       run:  |
-         echo `pwd`/ituse
-         cd ituse && sh workflow.sh `pwd`
+         echo `pwd`/speed
+         cd speed && sh workflow.sh `pwd`
 
 
 
