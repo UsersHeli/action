@@ -49,13 +49,6 @@ jobs:
          git add ./url1.yaml
          git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
          git push origin main
-    # - name: Push
-    #   uses:  ad-m/github-push-action@master
-    #   with:
-    #     branch: main
-
-
-
   # # This workflow contains a single job called "build"
   # build:
   #   name: test

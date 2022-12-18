@@ -37,8 +37,19 @@ jobs:
     - name: run
       run: |
          cd speed && sh workflow.sh `pwd`
-
-
+    - uses: actions/checkout@v3
+      with: 
+        path: test
+    - name: cp
+      run: |
+         cp ./speed/Eternity.yaml ./test/url1.yaml
+         cd ./test
+         git config --local user.email "actions@github.com"
+         git config --local user.name "GitHub Actions"
+         git pull origin main
+         git add ./url1.yaml
+         git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
+         git push origin main
 
   # # This workflow contains a single job called "build"
   # build:
