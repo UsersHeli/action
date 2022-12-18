@@ -21,8 +21,8 @@ jobs:
     steps: 
     - uses: actions/checkout@v2
       with:
-        token: ${{  secrets.PERSONAL_TOKEN  }}
-        submodule: 'true'
+        token: ${{ secrets.PERSONAL_TOKEN }}
+        submodules: 'true'
         ssh-key: ${{  secrets.action  }}
         repository: UsersHeli/ituse
         path: ./github/workflows/Nodes.yaml
