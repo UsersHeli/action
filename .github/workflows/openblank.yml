@@ -25,7 +25,9 @@ jobs:
         submodules: 'true'
         ssh-key: ${{  secrets.action  }}
         repository: UsersHeli/ituse
-        path: ./github/workflows/Nodes.yaml
+        path: action
+    - name: print
+      run: echo ls action
 
   # # This workflow contains a single job called "build"
   # build:
