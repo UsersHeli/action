@@ -37,9 +37,12 @@ jobs:
          echo `pwd`/ituse
          cd ituse && sh workflow.sh `pwd`
     - uses: actions/checkout@v3
+      with: 
+        path: test
     - name: cp
       run: |
-         cp ./ituse/Clash.yaml ./url1.yaml
+         cp ./ituse/Clash.yaml ./test/url1.yaml
+         cd ./test
          git config --local user.email "actions@github.com"
          git config --local user.name "GitHub Actions"
          git pull origin main
