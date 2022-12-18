@@ -28,6 +28,8 @@ jobs:
         path: action
     - name: print
       run: echo `ls action`
+    - name: get workdir
+      run: echo `pwd`/action
 
   # # This workflow contains a single job called "build"
   # build:
