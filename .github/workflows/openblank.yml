@@ -38,9 +38,9 @@ jobs:
     - name: get workdir
       run:  |
          echo `pwd`/ituse
-         cd ituse && sh workflow.sh `pwd`/ituse
+         cd ituse && sh workflow.sh `pwd`
 
-         
+
 
   # # This workflow contains a single job called "build"
   # build:
